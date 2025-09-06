@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "DL Slot Booking Extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for DL slot booking automation on Sarathi Parivahan",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://sarathi.parivahan.gov.in/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DL Slot Booking"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://sarathi.parivahan.gov.in/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

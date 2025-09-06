@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            margin: 0;
+        }
+        
+        .timer-section {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .time-display {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+        
+        .target-time {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .target-time input {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            width: 100px;
+        }
+        
+        .target-time input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .start-btn {
+            background: #28a745;
+            color: white;
+        }
+        
+        .stop-btn {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .fill-btn {
+            background: #17a2b8;
+            color: white;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .status {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+            min-height: 20px;
+        }
+        
+        .instructions {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚗 DL Slot Booking</h1>
+    </div>
+    
+    <div class="timer-section">
+        <div class="time-display" id="currentTime">--:--:--</div>
+        
+        <div class="target-time">
+            <label>Target Time:</label><br>
+            <input type="time" id="targetTime" value="09:00" step="1">
+        </div>
+        
+        <div class="buttons">
+            <button id="startBtn" class="start-btn">Start Timer</button>
+            <button id="stopBtn" class="stop-btn" disabled>Stop Timer</button>
+        </div>
+        
+        <div class="buttons">
+            <button id="fillBtn" class="fill-btn">Fill Form</button>
+        </div>
+    </div>
+    
+    <div class="status" id="status">Ready to start</div>
+    
+    <div class="instructions">
+        <strong>Instructions:</strong><br>
+        1. Open DL slot booking page<br>
+        2. Set target time (default 9:00 AM)<br>
+        3. Click "Fill Form" to auto-fill<br>
+        4. Enter captcha manually<br>
+        5. Click "Start Timer" before target time<br>
+        Extension will auto-submit at exact time!
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
