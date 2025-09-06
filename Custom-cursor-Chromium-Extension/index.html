@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Cursor</title>
+    <style>
+      /* Existing styles */
+      * {
+        cursor: url("./icon.png"), auto;
+      }
+
+      .uploads-container {
+        margin-top: 20px;
+      }
+
+      .cursor-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .cursor-preview {
+        width: 32px;
+        height: 32px;
+        margin-right: 10px;
+      }
+
+      .apply-btn {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .apply-btn:hover {
+        background-color: #0056b3;
+      }
+
+      .checkbox-container {
+        margin-top: 20px;
+      }
+
+      .slider-container {
+        margin-top: 20px;
+      }
+
+      .slider-label {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Custom Cursor</h1>
+      <button id="addCursorBtn">Add Custom Cursor</button>
+      <input
+        type="file"
+        id="fileInput"
+        accept="image/*"
+        style="display: none"
+      />
+      <div class="checkbox-container">
+        <label>
+          <input type="checkbox" id="removeBgCheckbox" />
+          Remove Background
+        </label>
+      </div>
+      <div id="uploadsContainer" class="uploads-container"></div>
+      <div class="slider-container">
+        <label for="sizeSlider" class="slider-label">Cursor Size: <span id="sizeValue">32px</span></label>
+        <input type="range" id="sizeSlider" min="16" max="128" value="32" />
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
